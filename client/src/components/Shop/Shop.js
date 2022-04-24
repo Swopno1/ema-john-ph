@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
-import useProducts from '../../hooks/useProducts';
-import { addToDb, getStoredCart } from '../../utilities/fakedb';
+import { addToDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
@@ -69,7 +68,7 @@ const Shop = () => {
               className={page === number ? 'selected' : ''}
               onClick={() => setPage(number)}
             >
-              {number}
+              {number + 1}
             </button>
           ))}
           <select onChange={(e) => setSize(e.target.value)}>
